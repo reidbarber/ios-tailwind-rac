@@ -2,26 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html {
+  height: 100vh;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+body, #__next {
+  height: 100%;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.my-row > [role="gridcell"] {
+  width: 100%;
+  display: grid;
+  grid-template-areas: "thumbnail title . detail switch checkbox chevron draghandle";
+  grid-template-columns: repeat(2, auto) 1fr repeat(3, auto);
+  grid-template-rows: auto;
+}
+
+.my-row .thumbnail {
+  grid-area: thumbnail;
+}
+
+.my-row .title {
+  grid-area: title;
+}
+
+.my-row .detail {
+  grid-area: detail;
+}
+
+.my-row .switch {
+  grid-area: switch;
+}
+
+.my-row .checkbox {
+  grid-area: checkbox;
+}
+
+.my-row .chevron {
+  grid-area: chevron;
 }
